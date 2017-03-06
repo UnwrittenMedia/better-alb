@@ -1,0 +1,19 @@
+## Run with:
+##
+##    docker-compose up -d --build
+##
+## Get console access for developing:
+##
+##    docker-compose exec betteralb bash
+##
+
+version: "2"
+services:
+  betteralb:
+    build: .
+    command: tail -f /templates/blank
+    ports:
+      - "8006:80"
+    volumes:
+      - "./app:/app"
+      - "./templates:/templates"
